@@ -37,3 +37,11 @@ Defines two services: `mysqldb` and `fxdeal`.
 ### Access Endpoints Using Swagger
 - `localhost:3003/api/deals` for GET requests.
 - `localhost:3003/api/deals/deal` for POST requests.
+
+### Validations
+
+- **Currency Validation:** The “from” and “to” currencies cannot be the same. Ensure that the user selects different currencies for conversion.
+- **ID Generation:** Automatically generate a unique ID for each deal, for ensuring uniqueness and portability.
+- **Deal Amount:** The deal amount must be greater than or equal to 1. Reject any deals with amounts below this threshold.
+- **Non-Null Values:** All input values (currency, amount, etc.) must be non-null. Validate that no required fields are left empty.
+- **Timestamp Generation:** Automatically generate a timestamp for each deal. which is the current date and time.
