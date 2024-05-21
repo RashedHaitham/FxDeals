@@ -1,6 +1,10 @@
 package com.bloomberg.warehouse.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,18 +22,19 @@ public class FxDeal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
-    @Column(name = "from_currency", nullable = false)
+    @NotNull(message = "From Currency cannot be null")
     private String fromCurrency;
 
-    @Column(name = "to_currency", nullable = false)
+    @NotNull(message = "To Currency cannot be null")
     private String toCurrency;
 
-    @Column(name = "deal_timestamp", nullable = false)
+    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
     private LocalDateTime dealTimestamp;
 
-    @Column(name = "deal_amount", nullable = false)
+    @NotNull(message = "Amount cannot be null")
+    @DecimalMin(value = "1.0", message = "Deal amount can't be negative or less than 1")
     private BigDecimal dealAmount;
 
     @PrePersist

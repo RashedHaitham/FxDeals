@@ -8,5 +8,5 @@ public interface FxDealDAO {
 
     void insertFxDeal(FxDeal fxDeal);
 
-    Optional<FxDeal> getFxDeal(int fxDealId);
+    Optional<FxDeal> getFxDeal(long fxDealId);
 }

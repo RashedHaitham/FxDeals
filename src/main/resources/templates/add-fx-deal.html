@@ -21,14 +21,14 @@
                 <div class="form-group">
                     <label for="fromCurrency">From Currency:</label>
                     <select id="fromCurrency" name="fromCurrency" th:field="*{fromCurrency}" class="form-control" onchange="updateDealAmount()">
-                        <option th:each="currency : ${allCurrencies}" th:value="${currency.code}" th:text="${currency.name} + ' ' + ${currencySymbols[currency.code]}"></option>
+                        <option th:each="currency : ${allCurrencies}" th:value="${currency}" th:text="${currency.name} + ' ' + ${currency}"></option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="toCurrency">To Currency:</label>
                     <select id="toCurrency" name="toCurrency" th:field="*{toCurrency}" class="form-control">
-                        <option th:each="currency : ${allCurrencies}" th:value="${currency.code}" th:text="${currency.name} + ' ' + ${currencySymbols[currency.code]}"></option>
+                        <option th:each="currency : ${allCurrencies}" th:value="${currency}" th:text="${currency.name} + ' ' + ${currency}"></option>
                     </select>
                 </div>
 
@@ -39,7 +39,7 @@
                         <div class="input-group-prepend">
                             <span id="currencySymbol" class="input-group-text"></span>
                         </div>
-                        <input type="number" id="dealAmount" name="dealAmount" step="any" class="form-control">
+                        <input type="number" id="dealAmount" name="dealAmount" step="0.05" class="form-control">
                     </div>
                 </div>
 
@@ -49,9 +49,6 @@
     </div>
 </div>
 <script th:inline="javascript">
-    /*<![CDATA[*/
-    const currencySymbols = /*[[${currencySymbols}]]*/ {};
-    /*]]>*/
 
     function updateDealAmount() {
         const fromCurrency = document.getElementById("fromCurrency").value;
@@ -64,7 +61,7 @@
         dealAmountField.value = "";
         currencySymbolSpan.innerText = "";
 
-        currencySymbolSpan.innerText = currencySymbols[fromCurrency] || "";
+        currencySymbolSpan.innerText = fromCurrency || "";
 
         if (fromCurrency === toCurrency) {
             dealAmountField.value = "0";

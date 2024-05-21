@@ -1,0 +1,14 @@
+com\bloomberg\warehouse\model\dto\FxDealDto$FxDealDtoBuilder.class
+com\bloomberg\warehouse\exceptions\CurrencyNotFoundException.class
+com\bloomberg\warehouse\FxDealsApplication.class
+com\bloomberg\warehouse\repository\FxDealRepository.class
+com\bloomberg\warehouse\controller\FxDealController.class
+com\bloomberg\warehouse\exceptions\DuplicateDealException.class
+com\bloomberg\warehouse\model\entity\FxDeal.class
+com\bloomberg\warehouse\repository\FxDealDAO.class
+com\bloomberg\warehouse\repository\FxDealRepositoryImpl.class
+com\bloomberg\warehouse\service\CurrencyService.class
+com\bloomberg\warehouse\exceptions\SameCurrencyException.class
+com\bloomberg\warehouse\model\entity\FxDeal$FxDealBuilder.class
+com\bloomberg\warehouse\model\dto\FxDealDto.class
+com\bloomberg\warehouse\service\FxDealService.class

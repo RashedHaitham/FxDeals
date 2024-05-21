@@ -1,0 +1,12 @@
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\exceptions\DuplicateDealException.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\repository\FxDealDAO.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\exceptions\CurrencyNotFoundException.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\exceptions\SameCurrencyException.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\FxDealsApplication.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\controller\FxDealController.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\repository\FxDealRepository.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\service\FxDealService.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\model\dto\FxDealDto.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\repository\FxDealRepositoryImpl.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\service\CurrencyService.java
+C:\Users\rashe\Desktop\FxDeal\src\main\java\com\bloomberg\warehouse\model\entity\FxDeal.java

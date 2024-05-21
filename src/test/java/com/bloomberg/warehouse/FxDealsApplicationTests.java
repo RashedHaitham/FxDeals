@@ -5,9 +5,10 @@ import com.bloomberg.warehouse.exceptions.CurrencyNotFoundException;
 import com.bloomberg.warehouse.exceptions.DuplicateDealException;
 import com.bloomberg.warehouse.exceptions.SameCurrencyException;
 import com.bloomberg.warehouse.model.dto.FxDealDto;
-import com.bloomberg.warehouse.model.enums.Currency;
+import com.bloomberg.warehouse.model.entity.FxDeal;
 import com.bloomberg.warehouse.service.CurrencyService;
 import com.bloomberg.warehouse.service.FxDealService;
+import com.neovisionaries.i18n.CurrencyCode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -40,25 +41,24 @@ class FxDealControllerTest {
     @Test
     void testShowAddFxDealForm() {
         Model model = mock(Model.class);
-        List<Currency> currencies = Collections.singletonList(Currency.USD);
+        List<CurrencyCode> currencies = Collections.singletonList(CurrencyCode.USD);
 
         when(currencyService.getAllCurrencies()).thenReturn(currencies);
-        when(currencyService.getCurrencySymbols()).thenReturn(Collections.singletonMap("USD", "$"));
 
         String viewName = fxDealController.showAddFxDealForm(model);
 
         assertEquals("add-fx-deal", viewName);
         verify(model).addAttribute("allCurrencies", currencies);
-        verify(model).addAttribute("currencySymbols", Collections.singletonMap("USD", "$"));
         verify(model).addAttribute("fxDealDto", new FxDealDto());
     }
 
     @Test
     void testCreateFXDeal_Success() {
         FxDealDto dealDTO = new FxDealDto();
+        FxDeal fxDeal = new FxDeal();
         Model model = mock(Model.class);
 
-        when(fxDealService.addFxDeal(dealDTO)).thenReturn(dealDTO);
+        when(fxDealService.addFxDeal(dealDTO)).thenReturn(fxDeal);
 
         String viewName = fxDealController.createFXDeal(dealDTO, model);
 
